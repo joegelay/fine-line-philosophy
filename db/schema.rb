@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2020_04_09_193646) do
   end
 
   create_table "pairs", force: :cascade do |t|
-    t.integer "idea_one_id", null: false
-    t.integer "idea_two_id", null: false
+    t.integer "idea_one_id"
+    t.integer "idea_two_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["idea_one_id"], name: "index_pairs_on_idea_one_id"
@@ -47,6 +47,4 @@ ActiveRecord::Schema.define(version: 2020_04_09_193646) do
 
   add_foreign_key "entries", "ideas"
   add_foreign_key "entries", "users"
-  add_foreign_key "pairs", "idea_ones"
-  add_foreign_key "pairs", "idea_twos"
 end
