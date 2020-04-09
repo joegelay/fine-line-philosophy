@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idea_one: one
+  idea_two: one
+
+two:
+  idea_one: two
+  idea_two: two
