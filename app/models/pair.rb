@@ -1,4 +1,4 @@
 class Pair < ApplicationRecord
-  belongs_to :idea_one
-  belongs_to :idea_two
+  has_one :idea_one, :class_name => "Idea"
+  has_one :idea_two, :class_name => "Idea"
 end
