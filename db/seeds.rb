@@ -18,6 +18,13 @@ passion = Idea.create name: "Passion"
 obsession = Idea.create name: "Obsession"
 success = Idea.create name: "Success"
 achievement = Idea.create name: "Achievement"
+contentment = Idea.create name: "Contentment"
+complacency = Idea.create name: "Complacency"
+wisdom = Idea.create name: "Wisdom"
+intelligence = Idea.create name: "Intelligence"
+courage = Idea.create name: "Courage"
+confidence = Idea.create name: "Confidence"
+
 
 entry1 = Entry.create content: "Passion test, joe", idea: passion, user: joe
 entry2 = Entry.create content: "Obsession test, joe", idea: obsession, user: joe
@@ -26,5 +33,11 @@ entry4 = Entry.create content: "Obsession test, chris", idea: obsession, user: c
 
 passion_obsession = Pair.create idea_one: passion, idea_two: obsession
 success_achievement = Pair.create idea_one: success, idea_two: achievement
+contentment_complacency = Pair.create idea_one: contentment, idea_two: complacency
+wisdom_intelligence = Pair.create idea_one: wisdom, idea_two: intelligence
+courage_confidence = Pair.create idea_one: courage, idea_two: confidence
+
+
+
 
 
