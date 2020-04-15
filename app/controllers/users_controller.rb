@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
     def index 
+        authenticate
+
         @users = User.all 
         render json: @users 
     end 

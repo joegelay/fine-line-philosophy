@@ -21,10 +21,6 @@ class EntriesController < ApplicationController
     #     idea = Idea.find_by(id: params[:idea])
     #     user = User.find_by(id: params[:user])
 
-    #     @entry = Entry.create(
-    #         content: params[:content],
-    #         user: user,
-    #         idea: idea
-    #     )
+    #     @entry = Entry.create(content: params[:content], user: user, idea: idea)
     # end
 end
