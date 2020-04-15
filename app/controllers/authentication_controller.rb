@@ -9,7 +9,8 @@ class AuthenticationController < ApplicationController
                 render json: {message: "Password incorrect"}
             else 
                 payload = {
-                    user_id: @user.id 
+                    user_id: @user.id,
+                    username: @user.username
                 }
                 secret_key = Rails.application.secret_key_base
                 token = JWT.encode payload, secret_key
