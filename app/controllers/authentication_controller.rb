@@ -3,10 +3,10 @@ class AuthenticationController < ApplicationController
         @user = User.find_by(username: params[:username])
 
         if !@user 
-            render json: {message: "Cannot find user"}
+            render json: {message: "Username or password incorrect."}
         else 
             if !@user.authenticate(params[:password])
-                render json: {message: "Password incorrect"}
+                render json: {message: "Username or password incorrect."}
             else 
                 payload = {
                     user_id: @user.id,
