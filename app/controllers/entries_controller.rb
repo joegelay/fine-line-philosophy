@@ -9,18 +9,18 @@ class EntriesController < ApplicationController
         render json: @entry, include: [:user, :idea]
     end 
 
-    # def create 
-    #     authenticate 
-
-    #     idea = Idea.find_by(id: params[:idea])
-       
-    #     @entry = Entry.create(content: params[:content], user: @user, idea: idea)
-    # end
-
     def create 
-        idea = Idea.find_by(id: params[:idea])
-        user = User.find_by(id: params[:user])
+        authenticate 
 
-        @entry = Entry.create(content: params[:content], user: user, idea: idea)
+        idea = Idea.find_by(id: params[:idea])
+       
+        @entry = Entry.create(content: params[:content], user: @user, idea: idea)
     end
+
+    # def create 
+    #     idea = Idea.find_by(id: params[:idea])
+    #     user = User.find_by(id: params[:user])
+
+    #     @entry = Entry.create(content: params[:content], user: user, idea: idea)
+    # end
 end
