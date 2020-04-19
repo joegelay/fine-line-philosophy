@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2020_04_09_193646) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "entries", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id", null: false
-    t.integer "idea_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "idea_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["idea_id"], name: "index_entries_on_idea_id"
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 2020_04_09_193646) do
   end
 
   create_table "pairs", force: :cascade do |t|
-    t.integer "idea_one_id"
-    t.integer "idea_two_id"
+    t.bigint "idea_one_id"
+    t.bigint "idea_two_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["idea_one_id"], name: "index_pairs_on_idea_one_id"
