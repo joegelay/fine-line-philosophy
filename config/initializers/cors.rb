@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins ['http://finelinephilosophy.com/','https://finelinephilosophy.com/']
+    origins ['finelinephilosophy.com/#main','finelinephilosophy.com/read.html', 'finelinephilosophy.com/write.html', 'finelinephilosophy.com']
 
     resource '*',
       headers: :any,
