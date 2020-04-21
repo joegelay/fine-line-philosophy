@@ -33,7 +33,7 @@ class ApplicationController < ActionController::API
         @user = User.find_by(id: user_id)
     
         if !@user == User.find_by(id: 1)
-            render status: :unauthorized
+            render json: { message: "Authentication could not complete" }
         end 
     end 
 
