@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
     def index 
+        admin_authenticate 
+        
         @users = User.all 
         render json: @users 
     end 
 
     def show
+        admin_authenticate 
+
         @user = User.find(params[:id])
         render json: @user 
     end 
@@ -20,6 +24,8 @@ class UsersController < ApplicationController
     end 
 
     def update
+        admin_authenticate 
+
         @user = User.find(params[:id])
 
         if @user.update(user_params)
@@ -30,6 +36,8 @@ class UsersController < ApplicationController
     end
 
     def destroy
+        admin_authenticate 
+
         @user = User.find(params[:id])
         @user.destroy 
 
